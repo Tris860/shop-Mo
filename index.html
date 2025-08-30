@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Icyangwe - Style & Sophistication</title>
+    
+    <!-- Load Playfair Display font from Google Fonts for an elegant, fancy look. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+    <!-- All styling has been consolidated into this single CSS block -->
+</head>
+
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="header">
+        <nav class="container header-nav">
+            <!-- Logo now uses an image instead of text -->
+            <a href="#">
+                <img src="https://placehold.co/120x40/000000/ffffff?text=ICYANGWE+LOGO" alt="Icyangwe Logo" style="height: 2.5rem;">
+            </a>
+            <div class="nav-links">
+                <a href="#new-arrivals" class="nav-link">New Arrivals</a>
+                <a href="#popular-picks" class="nav-link">Popular Picks</a>
+                <a href="#collections" class="nav-link">Collections</a>
+                <a href="sections/shop.html" class="nav-link">Shop All</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <svg xmlns="http://www.w3.org/2000/svg" style="height: 1.5rem; width: 1.5rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu">
+            <div style="padding: 0.5rem 1rem; display: flex; flex-direction: column; gap: 0.25rem;">
+                <a href="#new-arrivals" class="mobile-menu-link">New Arrivals</a>
+                <a href="#popular-picks" class="mobile-menu-link">Popular Picks</a>
+                <a href="#collections" class="mobile-menu-link">Collections</a>
+                <a href="#shop-all" class="mobile-menu-link">Shop All</a>
+                <a href="#contact" class="mobile-menu-link">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-hero hero-section">
+        <div class="hero-content animate-on-scroll">
+            <h1 style="font-size: 3rem; font-weight: 800; color: var(--color-gray-900); line-height: 1.25;">Effortless Style, Curated for You</h1>
+            <p style="margin-top: 1rem; font-size: 1.25rem; color: var(--color-gray-700); font-weight: 500;">
+                Discover your next favorite piece from our latest collection of sophisticated, timeless apparel.
+            </p>
+            <a href="#new-arrivals" class="btn btn-primary" style="margin-top: 2rem;">
+                Shop New Arrivals
+            </a>
+        </div>
+    </section>
+
+    <!-- New Arrivals Section -->
+    <section id="new-arrivals" class="section container">
+        <h2 class="section-header animate-on-scroll">New Arrivals</h2>
+        <div class="product-grid">
+            <!-- Product Card 1 -->
+            <div class="product-card animate-on-scroll">
+                <img src="https://placehold.co/600x600/6b7280/ffffff?text=Product%201" alt="Stylish Product 1" class="img-hover-effect">
+                <div class="product-card-body">
+                    <h3 style="font-size: 1.125rem; font-weight: 600; color: var(--color-gray-800);">The Everyday Tee</h3>
+                    <p style="margin-top: 0.25rem; font-size: 0.875rem; color: var(--color-gray-500);">$35.00</p>
+                    <button class="btn btn-primary" style="margin-top: 1rem; font-weight: 600;">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+            <!-- Product Card 2 -->
+            <div class="product-card animate-on-scroll">
+                <img src="https://placehold.co/600x600/4b5563/ffffff?text=Product%202" alt="Stylish Product 2" class="img-hover-effect">
+                <div class="product-card-body">
+                    <h3 style="font-size: 1.125rem; font-weight: 600; color: var(--color-gray-800);">Slim-Fit Denim</h3>
+                    <p style="margin-top: 0.25rem; font-size: 0.875rem; color: var(--color-gray-500);">$75.00</p>
+                    <button class="btn btn-primary" style="margin-top: 1rem; font-weight: 600;">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+            <!-- Product Card 3 -->
+            <div class="product-card animate-on-scroll">
+                <img src="https://placehold.co/600x600/374151/ffffff?text=Product%203" alt="Stylish Product 3" class="img-hover-effect">
+                <div class="product-card-body">
+                    <h3 style="font-size: 1.125rem; font-weight: 600; color: var(--color-gray-800);">Classic Blazer</h3>
+                    <p style="margin-top: 0.25rem; font-size: 0.875rem; color: var(--color-gray-500);">$120.00</p>
+                    <button class="btn btn-primary" style="margin-top: 1rem; font-weight: 600;">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+            <!-- Product Card 4 -->
+            <div class="product-card animate-on-scroll">
+                <img src="https://placehold.co/600x600/1f2937/ffffff?text=Product%204" alt="Stylish Product 4" class="img-hover-effect">
+                <div class="product-card-body">
+                    <h3 style="font-size: 1.125rem; font-weight: 600; color: var(--color-gray-800);">Comfort Hoodie</h3>
+                    <p style="margin-top: 0.25rem; font-size: 0.875rem; color: var(--color-gray-500);">$60.00</p>
+                    <button class="btn btn-primary" style="margin-top: 1rem; font-weight: 600;">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Picks Section -->
+    <section id="popular-picks" class="section container" style="background-color: var(--color-gray-50);">
+        <h2 class="section-header animate-on-scroll">Popular Picks</h2>
+        <div class="product-grid">
+            <!-- Popular Product Card 1 -->
+            <div class="product-card animate-on-scroll">
+                <img src="https://placehold.co/600x600/7a8595/ffffff?text=Popular%201" alt="Popular Product 1" class="img-hover-effect">
+                <div class="product-card-body">
+                    <h3 style="font-size: 1.125rem; font-weight: 600; color: var(--color-gray-800);">Signature Scarf</h3>
+                    <p style="margin-top: 0.25rem; font-size: 0.875rem; color: var(--color-gray-500);">$45.00</p>
+                    <button class="btn btn-primary" style="margin-top: 1rem; font-weight: 600;">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+            <!-- Popular Product Card 2 -->
+            <div class="product-card animate-on-scroll">
+                <img src="https://placehold.co/600x600/8b95a8/ffffff?text=Popular%202" alt="Popular Product 2" class="img-hover-effect">
+                <div class="product-card-body">
+                    <h3 style="font-size: 1.125rem; font-weight: 600; color: var(--color-gray-800);">Leather Tote Bag</h3>
+                    <p style="margin-top: 0.25rem; font-size: 0.875rem; color: var(--color-gray-500);">$150.00</p>
+                    <button class="btn btn-primary" style="margin-top: 1rem; font-weight: 600;">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+            <!-- Popular Product Card 3 -->
+            <div class="product-card animate-on-scroll">
+                <img src="https://placehold.co/600x600/98a3b5/ffffff?text=Popular%203" alt="Popular Product 3" class="img-hover-effect">
+                <div class="product-card-body">
+                    <h3 style="font-size: 1.125rem; font-weight: 600; color: var(--color-gray-800);">The Minimalist Watch</h3>
+                    <p style="margin-top: 0.25rem; font-size: 0.875rem; color: var(--color-gray-500);">$180.00</p>
+                    <button class="btn btn-primary" style="margin-top: 1rem; font-weight: 600;">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+            <!-- Popular Product Card 4 -->
+            <div class="product-card animate-on-scroll">
+                <img src="https://placehold.co/600x600/a8b2c4/ffffff?text=Popular%204" alt="Popular Product 4" class="img-hover-effect">
+                <div class="product-card-body">
+                    <h3 style="font-size: 1.125rem; font-weight: 600; color: var(--color-gray-800);">Wool Trench Coat</h3>
+                    <p style="margin-top: 0.25rem; font-size: 0.875rem; color: var(--color-gray-500);">$250.00</p>
+                    <button class="btn btn-primary" style="margin-top: 1rem; font-weight: 600;">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collections Section -->
+    <section id="collections" class="section" style="background-color: var(--color-gray-50);">
+        <div class="container">
+            <h2 class="section-header animate-on-scroll">Our Collections</h2>
+            <div class="collection-grid">
+                <!-- Collection Card 1 -->
+                <div class="collection-card animate-on-scroll">
+                    <img src="https://placehold.co/800x600/6b7280/ffffff?text=Casual%20Collection" alt="Casual Collection" class="img-hover-effect">
+                    <div class="collection-card-body">
+                        <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--color-gray-800);">Casual Essentials</h3>
+                        <p style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--color-gray-600);">Comfortable and stylish pieces for your everyday look.</p>
+                        <a href="#" class="btn" style="margin-top: 1rem; background-color: var(--color-gray-100); color: var(--color-gray-700); font-weight: 600;">
+                            View Collection
+                        </a>
+                    </div>
+                </div>
+                <!-- Collection Card 2 -->
+                <div class="collection-card animate-on-scroll">
+                    <img src="https://placehold.co/800x600/4b5563/ffffff?text=Formal%20Collection" alt="Formal Collection" class="img-hover-effect">
+                    <div class="collection-card-body">
+                        <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--color-gray-800);">Smart & Formal</h3>
+                        <p style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--color-gray-600);">Elevate your style with sophisticated garments for any occasion.</p>
+                        <a href="#" class="btn" style="margin-top: 1rem; background-color: var(--color-gray-100); color: var(--color-gray-700); font-weight: 600;">
+                            View Collection
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section id="contact" class="section newsletter-section">
+        <div class="container animate-on-scroll">
+            <div style="max-width: 42rem; margin-left: auto; margin-right: auto; text-align: center;">
+                <h2 style="font-size: 2.25rem; font-weight: 700; margin-bottom: 1rem; color: var(--color-gray-800);">Join the Icyangwe Family</h2>
+                <p style="font-size: 1.125rem; color: var(--color-gray-600); margin-bottom: 2rem;">
+                    Get exclusive updates on new products and special offers delivered right to your inbox.
+                </p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email address" class="newsletter-input">
+                    <button type="submit" class="btn btn-primary newsletter-btn">
+                        Subscribe
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container" style="text-align: center;">
+            <div class="social-links">
+                <a href="#" class="social-link">
+                    <!-- Placeholder for social media icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" style="height: 1.5rem; width: 1.5rem;" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.188-.895-.95-2.175-1.545-3.585-1.545-2.71 0-4.91 2.2-4.91 4.91 0 .385.043.76.128 1.124-4.085-.205-7.712-2.16-10.138-5.115-.424.729-.667 1.57-.667 2.47 0 1.7.868 3.197 2.18 4.077-.806-.026-1.565-.246-2.228-.616v.06c0 2.376 1.693 4.364 3.93 4.814-.412.112-.843.17-1.284.17-.314 0-.62-.03-.918-.088.625 1.956 2.438 3.38 4.58 3.42-1.688 1.328-3.816 2.122-6.136 2.122-.399 0-.795-.023-1.185-.069 2.188 1.39 4.778 2.21 7.55 2.21 9.056 0 13.99-7.49 13.99-13.99 0-.215-.005-.429-.014-.643.96-.695 1.79-1.56 2.45-2.55z" />
+                    </svg>
+                </a>
+                <a href="#" class="social-link">
+                    <!-- Placeholder for social media icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" style="height: 1.5rem; width: 1.5rem;" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M22.25 6.44h-2.18c.07-1.12.35-2.2.82-3.23a10.98 10.98 0 0 0-2.46-2.28c-1.39-1.2-3.1-1.82-4.9-1.82-3.6 0-6.52 2.92-6.52 6.52 0 .51.06 1.01.18 1.49h-3.66c-.34 0-.66.05-.97.12a5.45 5.45 0 0 0-1.27.42l-.56.32a.5.5 0 0 0-.25.43v2.88c0 .35.19.67.49.85l.08.05a20.8 20.8 0 0 0 1.28.61c.91.4 1.9.7 2.9.89l1.72.31c.32.06.65.1.98.11h.01c.2 0 .39-.01.59-.03.32-.04.64-.1.95-.19.46-.14.9-.3.35-.38.25-.07.48-.15.71-.24.76-.32 1.46-.72 2.1-1.19l.71-.56c.46-.35.88-.73 1.26-1.14l.02-.02a.5.5 0 0 0-.4-.82z" />
+                    </svg>
+                </a>
+                <a href="#" class="social-link">
+                    <!-- Placeholder for social media icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" style="height: 1.5rem; width: 1.5rem;" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.188-.895-.95-2.175-1.545-3.585-1.545-2.71 0-4.91 2.2-4.91 4.91 0 .385.043.76.128 1.124-4.085-.205-7.712-2.16-10.138-5.115-.424.729-.667 1.57-.667 2.47 0 1.7.868 3.197 2.18 4.077-.806-.026-1.565-.246-2.228-.616v.06c0 2.376 1.693 4.364 3.93 4.814-.412.112-.843.17-1.284.17-.314 0-.62-.03-.918-.088.625 1.956 2.438 3.38 4.58 3.42-1.688 1.328-3.816 2.122-6.136 2.122-.399 0-.795-.023-1.185-.069 2.188 1.39 4.778 2.21 7.55 2.21 9.056 0 13.99-7.49 13.99-13.99 0-.215-.005-.429-.014-.643.96-.695 1.79-1.56 2.45-2.55z" />
+                    </svg>
+                </a>
+            </div>
+            <p class="copyright">&copy; 2025 Icyangwe. All rights reserved.</p>
+        </div>
+    </footer>
+   <script src="javascript/main.js"></script>
+</body>
+
+</html>

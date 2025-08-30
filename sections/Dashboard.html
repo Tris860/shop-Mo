@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merchant Dashboard</title>
+    <!-- Use Playfair Display font -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Load Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+   <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside id="sidebar" class="sidebar">
+        <div class="header">
+            <i class="fa-solid fa-store fa-2x" style="color: var(--color-indigo);"></i>
+            <h1>Store Dashboard</h1>
+        </div>
+        <nav>
+            <a href="#dashboard" data-section="dashboard" class="sidebar-link active">
+                <i class="fa-solid fa-chart-bar"></i>
+                <span>Store Dashboard</span>
+            </a>
+            <a href="#orders" data-section="orders" class="sidebar-link">
+                <i class="fa-solid fa-receipt"></i>
+                <span>Orders Section</span>
+            </a>
+            <a href="#inventory" data-section="inventory" class="sidebar-link">
+                <i class="fa-solid fa-boxes-stacked"></i>
+                <span>Inventory Section</span>
+            </a>
+            <a href="#sales" data-section="sales" class="sidebar-link">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Sales Summary</span>
+            </a>
+            <a href="#settings" data-section="settings" class="sidebar-link">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Overlay to close sidebar on mobile -->
+    <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+    <!-- Main content area -->
+    <div class="main-content">
+        <!-- Top bar and hamburger menu -->
+        <header class="mobile-header">
+            <!-- Hamburger menu button for mobile -->
+            <button id="menu-button" class="btn secondary">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <h1>Store Dashboard</h1>
+        </header>
+
+        <!-- Main section container -->
+        <main>
+            <!-- Store Dashboard Section - displayed by default -->
+            <section id="dashboard" class="main-section">
+                <h2 class="h2">📈 Store Dashboard</h2>
+                <div class="grid-3">
+                    <div class="card">
+                        <p class="label">Today's Sales</p>
+                        <p class="value">RWF 120,000</p>
+                    </div>
+                    <div class="card">
+                        <p class="label">Orders Today</p>
+                        <p class="value">18</p>
+                    </div>
+                    <div class="card">
+                        <p class="label">Low Stock Alerts</p>
+                        <p class="value low-stock">3 items</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Orders Section -->
+            <section id="orders" class="main-section hidden">
+                <h2 class="h2">🧾 Orders Section</h2>
+                <!-- New Orders List - items are now clickable with order ID -->
+                <div class="space-y-4">
+                    <div class="order-item" data-order-id="1001">
+                        <div>
+                            <p class="title">Order #1001</p>
+                            <p class="subtitle">Customer: Jane Doe</p>
+                        </div>
+                        <span class="status-badge pending">Pending</span>
+                    </div>
+                    <div class="order-item" data-order-id="1002">
+                        <div>
+                            <p class="title">Order #1002</p>
+                            <p class="subtitle">Customer: John Smith</p>
+                        </div>
+                        <span class="status-badge shipped">Shipped</span>
+                    </div>
+                    <div class="order-item" data-order-id="1003">
+                        <div>
+                            <p class="title">Order #1003</p>
+                            <p class="subtitle">Customer: Alice Johnson</p>
+                        </div>
+                        <span class="status-badge delivered">Delivered</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Order Details Section - NEW, hidden by default -->
+            <section id="order-details" class="main-section hidden">
+                <button id="back-to-orders" class="btn secondary back-btn">← Back to Orders</button>
+                <h2 class="h2">Order Details</h2>
+                <div id="order-details-content">
+                    <!-- Dynamic content will be injected here by JavaScript -->
+                    <div class="card" style="text-align: left;">
+                        <h3 class="h3">Customer Information</h3>
+                        <p id="customer-name"></p>
+                        <p id="customer-email"></p>
+                    </div>
+                    
+                    <div class="card" style="text-align: left; margin-top: var(--spacing-md);">
+                        <h3 class="h3">Order Items</h3>
+                        <div class="overflow-auto">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Item</th>
+                                        <th>Qty</th>
+                                        <th>Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="order-items-table">
+                                    <!-- Items will be injected here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="btn-group" style="margin-top: var(--spacing-md);">
+                        <button class="btn primary">Mark as Shipped</button>
+                        <button class="btn danger">Refund Order</button>
+                        <button class="btn secondary">Contact Customer</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Inventory Section - hidden by default -->
+            <section id="inventory" class="main-section hidden">
+                <h2 class="h2">👕 Inventory Section</h2>
+                <!-- Item List Table -->
+                <div class="overflow-auto">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Category</th>
+                                <th>Stock</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="stock-low">
+                                <td>Denim Jacket</td>
+                                <td>Outerwear</td>
+                                <td>3</td>
+                                <td>RWF 55,000</td>
+                            </tr>
+                            <tr>
+                                <td>Graphic T-shirt</td>
+                                <td>Tops</td>
+                                <td>45</td>
+                                <td>RWF 15,000</td>
+                            </tr>
+                            <tr>
+                                <td>Cargo Pants</td>
+                                <td>Bottoms</td>
+                                <td>22</td>
+                                <td>RWF 30,000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- Add New Item Form -->
+                <div style="margin-top: var(--spacing-xl);">
+                    <h3 class="h3">Add New Item</h3>
+                    <form style="display: flex; flex-direction: column; gap: var(--spacing-sm);">
+                        <input type="text" placeholder="Item Name">
+                        <input type="text" placeholder="Category">
+                        <input type="number" placeholder="Price">
+                        <input type="number" placeholder="Stock Count">
+                        <button type="submit" class="btn primary">Add Item</button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Sales Summary Section - hidden by default -->
+            <section id="sales" class="main-section hidden">
+                <h2 class="h2">📊 Sales Summary</h2>
+                <!-- Placeholder Bar Chart -->
+                <div class="card" style="text-align: left;">
+                    <h3 class="h3">Sales per day (last 7 days)</h3>
+                    <div style="display: flex; align-items: flex-end; justify-content: space-between; height: 10rem; background-color: var(--color-gray-50); padding: var(--spacing-sm); border-radius: var(--border-radius-md);">
+                        <div style="flex: 1; background-color: var(--color-blue); border-top-left-radius: var(--border-radius-sm); border-top-right-radius: var(--border-radius-sm); margin: 0 var(--spacing-sm); height: 50%;"></div>
+                        <div style="flex: 1; background-color: var(--color-blue); border-top-left-radius: var(--border-radius-sm); border-top-right-radius: var(--border-radius-sm); margin: 0 var(--spacing-sm); height: 70%;"></div>
+                        <div style="flex: 1; background-color: var(--color-blue); border-top-left-radius: var(--border-radius-sm); border-top-right-radius: var(--border-radius-sm); margin: 0 var(--spacing-sm); height: 65%;"></div>
+                        <div style="flex: 1; background-color: var(--color-blue); border-top-left-radius: var(--border-radius-sm); border-top-right-radius: var(--border-radius-sm); margin: 0 var(--spacing-sm); height: 80%;"></div>
+                        <div style="flex: 1; background-color: var(--color-blue); border-top-left-radius: var(--border-radius-sm); border-top-right-radius: var(--border-radius-sm); margin: 0 var(--spacing-sm); height: 95%;"></div>
+                        <div style="flex: 1; background-color: var(--color-blue); border-top-left-radius: var(--border-radius-sm); border-top-right-radius: var(--border-radius-sm); margin: 0 var(--spacing-sm); height: 60%;"></div>
+                        <div style="flex: 1; background-color: var(--color-indigo); border-top-left-radius: var(--border-radius-sm); border-top-right-radius: var(--border-radius-sm); margin: 0 var(--spacing-sm); height: 100%;"></div>
+                    </div>
+                </div>
+                <!-- Top Products -->
+                <div style="margin-top: var(--spacing-xl);">
+                    <h3 class="h3">Top Products</h3>
+                    <ul style="list-style-type: disc; padding-left: var(--spacing-lg); color: var(--color-gray-600); line-height: 1.5;">
+                        <li>Graphic T-shirt (100 sold)</li>
+                        <li>Cargo Pants (75 sold)</li>
+                        <li>Denim Jacket (50 sold)</li>
+                    </ul>
+                </div>
+                <!-- Returns -->
+                <div style="margin-top: var(--spacing-xl);">
+                    <h3 class="h3">Returns</h3>
+                    <ul style="list-style-type: disc; padding-left: var(--spacing-lg); color: var(--color-gray-600); line-height: 1.5;">
+                        <li>Count: 5</li>
+                        <li>Reason: Size doesn't fit</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Settings Section - hidden by default -->
+            <section id="settings" class="main-section hidden">
+                <h2 class="h2">⚙️ Settings</h2>
+                <div class="btn-group">
+                    <a href="#" class="btn secondary">Profile</a>
+                    <a href="#" class="btn secondary">Payment Setup</a>
+                    <a href="#" class="btn secondary">Store Info</a>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="../javascript/dashboard.js"></script>  
+</body>
+</html>
