@@ -24,8 +24,10 @@
         document.querySelectorAll('.animate-on-scroll').forEach(element => {
             observer.observe(element);
         });
-
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
         // Add logic for mobile menu toggle
+        mobileMenuBtn.addEventListener('click',toggleMobileMenu);
         function toggleMobileMenu() {
             const mobileMenu = document.getElementById('mobile-menu');
             if (mobileMenu.style.display === 'block') {
